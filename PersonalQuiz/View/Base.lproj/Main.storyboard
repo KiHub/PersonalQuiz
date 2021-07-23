@@ -219,12 +219,6 @@
                             <constraint firstItem="s5n-uC-evY" firstAttribute="trailing" secondItem="9Ng-NI-sRZ" secondAttribute="trailing" constant="20" id="p3M-Gy-3Y8"/>
                             <constraint firstItem="d4d-mv-QFF" firstAttribute="leading" secondItem="s5n-uC-evY" secondAttribute="leading" constant="20" id="ydn-76-VGe"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="9Ng-NI-sRZ"/>
-                                <exclude reference="d4d-mv-QFF"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="Ge8-DK-mcm"/>
                     <connections>

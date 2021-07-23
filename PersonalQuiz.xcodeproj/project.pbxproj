@@ -14,6 +14,9 @@
 		0B16AD4A26A9B5D1003D3B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B16AD4926A9B5D1003D3B3F /* Assets.xcassets */; };
 		0B16AD4D26A9B5D1003D3B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B16AD4B26A9B5D1003D3B3F /* LaunchScreen.storyboard */; };
 		0B16AD5726AAE3CB003D3B3F /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B16AD5626AAE3CB003D3B3F /* Questions.swift */; };
+		0B16AD6226AAE6F2003D3B3F /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B16AD6126AAE6F2003D3B3F /* ResponseType.swift */; };
+		0B16AD6726AAE8F6003D3B3F /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B16AD6626AAE8F6003D3B3F /* Answer.swift */; };
+		0B16AD6A26AAE98A003D3B3F /* AnimalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B16AD6926AAE98A003D3B3F /* AnimalType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		0B16AD4C26A9B5D1003D3B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B16AD4E26A9B5D1003D3B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B16AD5626AAE3CB003D3B3F /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		0B16AD6126AAE6F2003D3B3F /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		0B16AD6626AAE8F6003D3B3F /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		0B16AD6926AAE98A003D3B3F /* AnimalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				0B16AD5626AAE3CB003D3B3F /* Questions.swift */,
+				0B16AD6126AAE6F2003D3B3F /* ResponseType.swift */,
+				0B16AD6626AAE8F6003D3B3F /* Answer.swift */,
+				0B16AD6926AAE98A003D3B3F /* AnimalType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,7 +192,10 @@
 				0B16AD4526A9B5CE003D3B3F /* ViewController.swift in Sources */,
 				0B16AD5726AAE3CB003D3B3F /* Questions.swift in Sources */,
 				0B16AD4126A9B5CE003D3B3F /* AppDelegate.swift in Sources */,
+				0B16AD6726AAE8F6003D3B3F /* Answer.swift in Sources */,
+				0B16AD6226AAE6F2003D3B3F /* ResponseType.swift in Sources */,
 				0B16AD4326A9B5CE003D3B3F /* SceneDelegate.swift in Sources */,
+				0B16AD6A26AAE98A003D3B3F /* AnimalType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

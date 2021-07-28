@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--Вопрос №-->
         <scene sceneID="f3J-oi-jt0">
             <objects>
-                <viewController id="DFL-xv-98d" sceneMemberID="viewController">
+                <viewController id="DFL-xv-98d" customClass="QuestionViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f0P-pV-e8B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,23 +205,58 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Epw-z2-Xq2">
+                                <rect key="frame" x="20" y="111" width="280" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YJv-bx-4W3">
+                                <rect key="frame" x="0.0" y="103" width="320" height="4"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="s5n-uC-evY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="s5n-uC-evY" firstAttribute="trailing" secondItem="YJv-bx-4W3" secondAttribute="trailing" id="7P7-am-H2H"/>
                             <constraint firstItem="s5n-uC-evY" firstAttribute="trailing" secondItem="d4d-mv-QFF" secondAttribute="trailing" constant="20" id="LT3-5O-lrh"/>
                             <constraint firstItem="Fg7-eJ-Aiz" firstAttribute="centerY" secondItem="f0P-pV-e8B" secondAttribute="centerY" constant="18" id="PJe-a0-rIJ"/>
+                            <constraint firstItem="YJv-bx-4W3" firstAttribute="top" secondItem="s5n-uC-evY" secondAttribute="top" id="RCU-rn-T03"/>
+                            <constraint firstItem="Epw-z2-Xq2" firstAttribute="leading" secondItem="s5n-uC-evY" secondAttribute="leading" constant="20" id="SA3-t9-lzI"/>
                             <constraint firstItem="Fg7-eJ-Aiz" firstAttribute="leading" secondItem="s5n-uC-evY" secondAttribute="leading" constant="20" id="Tmj-YP-dbO"/>
                             <constraint firstItem="s5n-uC-evY" firstAttribute="trailing" secondItem="Fg7-eJ-Aiz" secondAttribute="trailing" constant="20" id="ZGX-1A-qSz"/>
                             <constraint firstItem="9Ng-NI-sRZ" firstAttribute="leading" secondItem="s5n-uC-evY" secondAttribute="leading" constant="20" id="b0c-iQ-Mbz"/>
                             <constraint firstItem="9Ng-NI-sRZ" firstAttribute="centerY" secondItem="f0P-pV-e8B" secondAttribute="centerY" constant="20" id="bhR-IT-fLC"/>
+                            <constraint firstItem="YJv-bx-4W3" firstAttribute="leading" secondItem="s5n-uC-evY" secondAttribute="leading" id="fXX-hY-TsL"/>
                             <constraint firstItem="d4d-mv-QFF" firstAttribute="centerY" secondItem="f0P-pV-e8B" secondAttribute="centerY" constant="17" id="mVy-gh-Ztr"/>
                             <constraint firstItem="s5n-uC-evY" firstAttribute="trailing" secondItem="9Ng-NI-sRZ" secondAttribute="trailing" constant="20" id="p3M-Gy-3Y8"/>
+                            <constraint firstItem="Epw-z2-Xq2" firstAttribute="top" secondItem="s5n-uC-evY" secondAttribute="top" constant="8" id="tdB-Z2-TJD"/>
+                            <constraint firstItem="s5n-uC-evY" firstAttribute="trailing" secondItem="Epw-z2-Xq2" secondAttribute="trailing" constant="20" id="ySn-y3-4Zu"/>
                             <constraint firstItem="d4d-mv-QFF" firstAttribute="leading" secondItem="s5n-uC-evY" secondAttribute="leading" constant="20" id="ydn-76-VGe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос №" id="Ge8-DK-mcm"/>
                     <connections>
+                        <outlet property="multiplyStackView" destination="d4d-mv-QFF" id="rom-9k-4ku"/>
+                        <outlet property="questionLabel" destination="Epw-z2-Xq2" id="VbU-mR-WYj"/>
+                        <outlet property="questionProgressView" destination="YJv-bx-4W3" id="VId-ng-Qnq"/>
+                        <outlet property="rangeSlider" destination="xxY-dq-kbD" id="ePg-Hn-7pT"/>
+                        <outlet property="rangedStackView" destination="Fg7-eJ-Aiz" id="uK6-8x-eBd"/>
+                        <outlet property="singleStackView" destination="9Ng-NI-sRZ" id="XRC-Wx-eR1"/>
+                        <outletCollection property="singleButtons" destination="1ax-MC-2sM" collectionClass="NSMutableArray" id="VAY-Sq-h8a"/>
+                        <outletCollection property="singleButtons" destination="wai-sg-syR" collectionClass="NSMutableArray" id="5ro-QA-6R8"/>
+                        <outletCollection property="singleButtons" destination="1nG-Tu-DdH" collectionClass="NSMutableArray" id="eGP-HO-JUd"/>
+                        <outletCollection property="singleButtons" destination="uid-fK-KCe" collectionClass="NSMutableArray" id="Gtv-x8-Ozh"/>
+                        <outletCollection property="multiplyLables" destination="9ne-9A-zPM" collectionClass="NSMutableArray" id="Ato-Nm-O4C"/>
+                        <outletCollection property="multiplyLables" destination="dNF-Qb-hOU" collectionClass="NSMutableArray" id="Clo-Ih-kp4"/>
+                        <outletCollection property="multiplySwitches" destination="oyC-ua-mlO" collectionClass="NSMutableArray" id="cMQ-6P-ftE"/>
+                        <outletCollection property="multiplySwitches" destination="RMe-ev-vd6" collectionClass="NSMutableArray" id="lqa-eK-5pW"/>
+                        <outletCollection property="multiplySwitches" destination="dxo-bs-Rc9" collectionClass="NSMutableArray" id="teQ-Ib-fci"/>
+                        <outletCollection property="multiplySwitches" destination="cYg-cs-Z5x" collectionClass="NSMutableArray" id="Uxp-O8-nMq"/>
+                        <outletCollection property="rangeLabels" destination="HDT-hz-gEw" collectionClass="NSMutableArray" id="qBu-70-DfJ"/>
+                        <outletCollection property="rangeLabels" destination="1hv-OX-xZg" collectionClass="NSMutableArray" id="0h9-2Z-laF"/>
+                        <outletCollection property="multiplyLables" destination="fNL-fz-txY" collectionClass="NSMutableArray" id="f45-qb-A20"/>
+                        <outletCollection property="multiplyLables" destination="ouJ-De-iqG" collectionClass="NSMutableArray" id="c3k-MF-0AV"/>
                         <segue destination="gom-Ka-VCI" kind="show" identifier="resultSegue" id="FaU-P2-AMD"/>
                     </connections>
                 </viewController>
@@ -232,7 +267,7 @@
         <!--Результат-->
         <scene sceneID="ckZ-vW-1cn">
             <objects>
-                <viewController id="gom-Ka-VCI" sceneMemberID="viewController">
+                <viewController id="gom-Ka-VCI" customClass="ResultsViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qO4-UX-DSe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -264,10 +299,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="KKw-kp-LUh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="nYK-Y3-Yau"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="nYK-Y3-Yau">
+                            <connections>
+                                <segue destination="WAf-c6-Qkf" kind="unwind" unwindAction="unwindSegue:" id="buq-Qt-r7p"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTg-bK-f6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="WAf-c6-Qkf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2529" y="104"/>
         </scene>

@@ -96,18 +96,30 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ax-MC-2sM">
                                         <rect key="frame" x="117" y="0.0" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="DFL-xv-98d" eventType="touchUpInside" id="SQr-pr-xCI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wai-sg-syR">
                                         <rect key="frame" x="117" y="40" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="DFL-xv-98d" eventType="touchUpInside" id="99U-xr-t26"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nG-Tu-DdH">
                                         <rect key="frame" x="117" y="80" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="DFL-xv-98d" eventType="touchUpInside" id="fnm-Ax-piY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uid-fK-KCe">
                                         <rect key="frame" x="117" y="120" width="46" height="30"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="DFL-xv-98d" eventType="touchUpInside" id="H4z-dr-rkJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -173,6 +185,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zi-NV-aA4">
                                         <rect key="frame" x="0.0" y="152" width="280" height="30"/>
                                         <state key="normal" title="Ответить"/>
+                                        <connections>
+                                            <action selector="multiplyAnswerButtonPressed:" destination="DFL-xv-98d" eventType="touchUpInside" id="9rd-oc-mbM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -202,6 +217,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EKi-WW-h4j">
                                         <rect key="frame" x="0.0" y="96" width="280" height="30"/>
                                         <state key="normal" title="Ответить"/>
+                                        <connections>
+                                            <action selector="rangedAnswerButtonPressed" destination="DFL-xv-98d" eventType="touchUpInside" id="9GY-c2-8KQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -301,10 +319,14 @@
                     <navigationItem key="navigationItem" title="Результат" id="KKw-kp-LUh">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="nYK-Y3-Yau">
                             <connections>
-                                <segue destination="WAf-c6-Qkf" kind="unwind" unwindAction="unwindSegue:" id="buq-Qt-r7p"/>
+                                <segue destination="WAf-c6-Qkf" kind="unwind" unwindAction="unwindSegue:" id="VN1-tp-y4R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultAnswerLabel" destination="IbJ-wm-RZr" id="ZRL-yA-xWG"/>
+                        <outlet property="resultDefinitionLabel" destination="PAI-VC-AvV" id="71s-rf-FNB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pTg-bK-f6J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="WAf-c6-Qkf" userLabel="Exit" sceneMemberID="exit"/>

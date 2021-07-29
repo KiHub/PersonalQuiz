@@ -33,7 +33,9 @@ class QuestionViewController: UIViewController {
     
     private let questions = Question.getQuestions()
     private var questionIndex = 0
-    
+    private var answersChoosen: [Answer ] = []
+//    private var currentAnswers =  questions[questionIndex].answers
+//
     
     
     override func viewDidLoad() {
@@ -44,15 +46,41 @@ class QuestionViewController: UIViewController {
     
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+   
+    
+    // MARK: - IB Actions
+    
+    @IBAction func singleAnswerButtonPressed(_ sender: UIButton) {
+        
+        let currentAnswers = questions[questionIndex].answers
+        guard let currentIndex = singleButtons.firstIndex(of: sender)  else {return}
+        let currentAnswer = currentAnswers[currentIndex]
+        answersChoosen.append(currentAnswer)
+        
+        nextQuestion()
     }
-    */
+    
+    @IBAction func multiplyAnswerButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+        
+        for (multiplySwitch,answer) in zip(multiplySwitches, currentAnswers) {
+            if multiplySwitch.isOn {
+                answersChoosen.append(answer)
+           // answersChoosen.append(currentAnswer[in])
+            }
+        }
+        nextQuestion()
+    }
+    
+    @IBAction func rangedAnswerButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+        let index = Int(round(rangeSlider.value * Float(currentAnswers.count - 1)))
+        answersChoosen.append(currentAnswers[index])
+        nextQuestion()
+        
+    }
+    
     
     // MARK: - Private Methods
     
@@ -69,7 +97,7 @@ class QuestionViewController: UIViewController {
         questionLabel.text = currentQuestion.text
         
         // Set progress count
-        let totalProgress = Float(questionIndex / questions.count)
+        let totalProgress = Float(questionIndex) / Float(questions.count)
         
         // Set progress fo questionProgressView
         questionProgressView.setProgress(totalProgress, animated: true)
@@ -102,7 +130,7 @@ class QuestionViewController: UIViewController {
         //Show singlestackview
         singleStackView.isHidden = false
         
-        for (button, answer) in (singleButtons, answer) {
+        for (button, answer) in zip(singleButtons, answer) {
             button.setTitle(answer.text, for: .normal)
         }
         
@@ -117,6 +145,11 @@ class QuestionViewController: UIViewController {
     private func updateMultiplyStackView(using answer: [Answer]) {
         
         multiplyStackView.isHidden = false
+        
+        for (label, answer) in zip(multiplyLables, answer) {
+            label.text = answer.text
+        }
+        
     }
     
     /// Setup ranged stackview
@@ -124,6 +157,37 @@ class QuestionViewController: UIViewController {
     private func updateRangedStackView(using answer: [Answer]) {
         
         rangedStackView.isHidden = false
+        
+        rangeLabels.first?.text = answer.first?.text
+        
     }
+    
+    // MARK: - Navigation
+    // Show next question or go next screen
+    private func nextQuestion() {
+        // TODO: Implement function
+        
+        questionIndex += 1
+        
+        if questionIndex < questions.count {
+                updateUI()
+        } else {
+            performSegue(withIdentifier: "resultSegue", sender: nil)
+        }
+        
+        
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "resultSegue" else {return}
+        let resultVC = segue.destination as! ResultsViewController
+        resultVC.responses = answersChoosen
+        
+        
+        
+        
+    }
+    
 
 }

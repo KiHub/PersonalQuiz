@@ -9,9 +9,16 @@ import UIKit
 
 class ResultsViewController: UIViewController {
 
-    @IBAction func unwindSegue(_ sender: UIStoryboardSegue){
-        
-    }
+    @IBOutlet weak var resultAnswerLabel: UILabel!
+    
+    @IBOutlet weak var resultDefinitionLabel: UILabel!
+    
+    
+        // MARK: - Public properties
+    
+    var responses: [Answer]!
+    
+    
     
     
 }
